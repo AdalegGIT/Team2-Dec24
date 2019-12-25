@@ -1,4 +1,4 @@
-#Review
+# Review
 
 ## git
 git init
@@ -10,6 +10,7 @@ git push
 git pull
 git remote add origin --origin link
 git clone <url>
+ --------------
 
 
 
