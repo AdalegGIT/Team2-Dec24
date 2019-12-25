@@ -171,20 +171,40 @@ violations = [ {money_owed: 50.0, violation_category: "Garbage and Refuse", date
 {money_owed: 44.0, violation_category: "Garbage and Refuse", date: "2012-09-19 00:00:00", inspection_id: "223813"} ]
 
 
-result_ = [] #contains the hashes with distinct violation as key and its count as value 
-category = [] #array to save all the violation category
+# result_ = [] #contains the hashes with distinct violation as key and its count as value 
+# category = [] #array to save all the violation category
 
 
 
-# def find_violation_category(violations_list)
-#     category = [] #array to save all the violation category
-#     violations_list.each do |violation| #iterating to fetch each item
-#             if !category.include?(violation[:violation_category])
-#                 category.push(violation[:violation_category])
-#             end
-#         end
-#     return category
-# end
+def find_violation_category_list(violations_list)
+    category = [] #array to save all the violation category
+    violations_list.each do |violation| #iterating to fetch each item
+
+        # if !category.include?(violation[:violation_category])
+                category.push(violation[:violation_category])
+           # end
+        end
+    return category.uniq!
+end
+
+
+puts find_violation_category_list(violations)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 def find_violation_category(violations_list)
@@ -196,19 +216,32 @@ def find_violation_category(violations_list)
 end
 
 
-cat = find_violation_category(violations)
 
-cat.collect! { |item| [item, item.upcase] }
-# ! do |c|
-#     a={}
-#     a[c]=0
+
+
+
+
+
+
+
+
+
+
+
+
+# cat = find_violation_category(violations)
+
+# cat.collect! { |item| [item, item.upcase] }
+# # ! do |c|
+# #     a={}
+# #     a[c]=0
+# # end
+
+# puts cat
+# def find_Violations_count(cat,violations_list)
+
+
 # end
-
-puts cat
-def find_Violations_count(cat,violations_list)
-
-
-end
 
 # Problem: Find the total money owed for each violation category
 

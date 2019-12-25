@@ -1,9 +1,44 @@
-# Problem: Pig Latin
-# Pig Latin
+
  # "apple" => "appleay"
  # "plum" => "umplay"
  # grape => apegray
  # Natalie => atalieNay
+ #igloo => iglooay
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # method to translate an english word into pig Latin
 # detect if first letter is consonant or vowel

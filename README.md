@@ -10,7 +10,28 @@ git push
 git pull
 git remote add origin --origin link
 git clone <url>
+git fork
  --------------
+
+## ruby
+Interpreted (vs. compiled)
+high-level programming language
+- ruby <name_of_the_prog_file>
+- irb
+
+## fundamentals
+
+ruby data types
+varriables
+gets.chomp
+p puts print
+
+
+
+
+
+
+
 
 
 
@@ -26,4 +47,3 @@ So far we've talk about how the fundamental build blocks of programming work, in
   * algorithms
 
 * Problem solving thought process
-
