@@ -141,7 +141,7 @@ violations = [ {money_owed: 50.0, violation_category: "Garbage and Refuse", date
 {money_owed: 64.0, violation_category: "Garbage and Refuse", date: "2012-10-19 00:00:00", inspection_id: "225457"},
 {money_owed: 80.0, violation_category: "Unsanitary Conditions", date: "2012-10-26 00:00:00", inspection_id: "226068"},
 {money_owed: 83.0, violation_category: "Building Conditions", date: "2012-10-02 00:00:00", inspection_id: "225101"},
-{money_owed: 1.0, violation_category: "Building Conditions", date: "2012-10-15 00:00:00", inspection_id: "224854"},
+{money_owed: 1.0,  violation_category: "Building Conditions", date: "2012-10-15 00:00:00", inspection_id: "224854"},
 {money_owed: 13.0, violation_category: "Animals and Pests", date: "2012-10-26 00:00:00", inspection_id: "225905"},
 {money_owed: 99.0, violation_category: "Animals and Pests", date: "2012-10-17 00:00:00", inspection_id: "225880"},
 {money_owed: 73.0, violation_category: "Garbage and Refuse", date: "2012-10-17 00:00:00", inspection_id: "225879"},
@@ -174,49 +174,58 @@ violations = [ {money_owed: 50.0, violation_category: "Garbage and Refuse", date
 # result_ = [] #contains the hashes with distinct violation as key and its count as value 
 # category = [] #array to save all the violation category
 
+# o/p = {Unsanitary Conditions: 2,
+#     Garbage and Refuse: 30,
+# }
 
+# o/p = [{
+#     name: Garbage and Refuse,
+#     count: 2
+# },
+# {
+#     name: Unsanitary Conditions,
+#     count: 20
+# }
+# ]
 
 def find_violation_category_list(violations_list)
     category = [] #array to save all the violation category
     violations_list.each do |violation| #iterating to fetch each item
 
-        # if !category.include?(violation[:violation_category])
+        #if !category.include?(violation[:violation_category])
                 category.push(violation[:violation_category])
-           # end
+        # end
         end
     return category.uniq!
 end
 
 
-puts find_violation_category_list(violations)
+# puts find_violation_category_list(violations)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def find_violation_category(violations_list)
-    category = [] #array to save all the violation category
-    category = violations_list.map do |violation| #iterating to fetch each item
-            violation[:violation_category]
-            end
-    return category.uniq!
+def find_violation_category_count(violations_list)
+    #category = [] #array to save all the violation category
+    hash ={}
+    violations_list.each do |violation| #iterating to fetch each item
+     if hash.keys.include?(violation[:violation_category])
+     hash[violation[:violation_category]] += 1
+    else
+       # value = violation[:violation_category]
+        hash[violation[:violation_category]] = 1
+      end
+    end
+    return hash
 end
 
 
 
+ output_hash =  find_violation_category_count(violations)
+
+ output_hash.each do |key,value|
+    puts "For the violation category: #{key}, there are #{value} violations"
+
+ end
 
 
 
@@ -224,8 +233,7 @@ end
 
 
 
-
-
+ 
 
 
 
